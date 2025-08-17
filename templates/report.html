@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <a href="/dashboard">🏠 Dashboard</a>
+    <a href="/add_student">➕ Add Student</a>
+    <a href="/mark_attendance">📝 Mark Attendance</a>
+    <a href="/report">📊 Report</a>
+    <a href="/logout">🚪 Logout</a>
+</div>
+
+<div class="container">
+    <h2>Attendance Report</h2>
+    <table>
+        <tr>
+            <th>Student</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {% for r in records %}
+        <tr>
+            <td>{{ r['name'] }}</td>
+            <td>{{ r['date'] }}</td>
+            <td>{{ r['status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('students') }}">
+    <button>Manage Students</button>
+</a>
+
+</div>
+</body>
+</html>

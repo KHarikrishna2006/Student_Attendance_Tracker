@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <a href="/dashboard">🏠 Dashboard</a>
+    <a href="/add_student">➕ Add Student</a>
+    <a href="/mark_attendance">📝 Mark Attendance</a>
+    <a href="/report">📊 Report</a>
+    <a href="/logout">🚪 Logout</a>
+</div>
+
+<div class="container">
+    <h1>Welcome   {{ session['teacher'] }}</h1>
+    <div class="dashboard-links">
+        <div class="card"><a href="/add_student">➕ Add Student</a></div>
+        <div class="card"><a href="/mark_attendance">📝 Mark Attendance</a></div>
+        <div class="card"><a href="/report">📊 View Report</a></div>
+        <div class="card"><a href="/logout">🚪 Logout</a></div>
+    </div>
+</div>
+</body>
+</html>

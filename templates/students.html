@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Students List</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f6f9; }
+    table { width: 50%; border-collapse: collapse; margin: 20px auto; background: #fff; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+    th { background: #007bff; color: white; }
+    a.delete { color: red; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Students</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+      <td>{{ student[0] }}</td>
+      <td>{{ student[1] }}</td>
+      <td><a href="/delete/{{ student[0] }}" class="delete">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
